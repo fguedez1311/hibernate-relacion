@@ -1,12 +1,11 @@
 package com.fguedez.DemoHibername.ConexionHibernate;
 
-import com.fguedez.DemoHibername.ConexionHibernate.Cliente;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 
-public class GuardarClientePrueba {
+public class ActualizaCliente {
     public static void main(String[] args) {
         SessionFactory miFactory=new Configuration().
                                      configure("hibernate.cfg.xml").
@@ -14,18 +13,17 @@ public class GuardarClientePrueba {
                                      buildSessionFactory();
         Session miSession=miFactory.openSession();
         try{
-            Cliente cliente=new Cliente("Sandra","Delgado","Goya");
+            int ClienteId=4;
             //Comenzar la trasacción
             miSession.beginTransaction();
-            miSession.save(cliente);
+         /*   Cliente miCliente=miSession.get(Cliente.class,ClienteId);
+            miCliente.setNombre("Fran");*/
+          //  miSession.createQuery("update Cliente set apellidos='Marin' where apellidos LIKE 'G%' ").executeUpdate();
+            miSession.createQuery("delete Cliente  where direccion='Goya' ").executeUpdate();
             miSession.getTransaction().commit();
-            System.out.println("Registro Insertado Correctamente en BD");
+            System.out.println("Registro Eliminado Correctamente en BD");
             //Lectura de registros
-            miSession.beginTransaction();
-            System.out.println("Lectura del registro con id: "+cliente.getId());
-            Cliente clienteInsertado=miSession.get(Cliente.class,cliente.getId());
-            System.out.printf("Registro: %s\n",clienteInsertado);
-            miSession.getTransaction().commit();
+
             System.out.println("Terminado");
             miSession.close();
         }
