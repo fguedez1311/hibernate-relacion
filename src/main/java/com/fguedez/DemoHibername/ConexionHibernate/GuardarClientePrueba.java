@@ -1,4 +1,4 @@
-package com.fguedez.DemoHibername;
+package com.fguedez.DemoHibername.ConexionHibernate;
 
 import com.fguedez.DemoHibername.ConexionHibernate.Cliente;
 import org.hibernate.Session;
@@ -14,7 +14,7 @@ public class GuardarClientePrueba {
                                      buildSessionFactory();
         Session miSession=miFactory.openSession();
         try{
-            Cliente cliente=new Cliente("Paco","Fdez","Paseo la Castellana");
+            Cliente cliente=new Cliente("Felipe","Guedez","El Saman");
             //Comenzar la trasacción
             miSession.beginTransaction();
             miSession.save(cliente);

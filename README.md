@@ -6,4 +6,6 @@
 ## Consulta de tipo select
 
     HQL: Es el lenguaje de consulta de Hibernate 
-[Manual de Hibernate](https://docs.jboss.org/hibernate/orm/3.6/reference/es-ES/pdf/hibernate_reference.pdf)
+## Algunos tutoriales de Hibernate
+* [Manual de Hibernate](https://docs.jboss.org/hibernate/orm/3.6/reference/es-ES/pdf/hibernate_reference.pdf)
+* [TutorialPoint](https://www.tutorialspoint.com/hibernate/index.htm)

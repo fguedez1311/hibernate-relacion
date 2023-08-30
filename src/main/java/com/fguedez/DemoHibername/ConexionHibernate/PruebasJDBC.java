@@ -1,4 +1,4 @@
-package com.fguedez.DemoHibername;
+package com.fguedez.DemoHibername.ConexionHibernate;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
