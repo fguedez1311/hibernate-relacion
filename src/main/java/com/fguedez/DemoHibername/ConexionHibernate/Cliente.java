@@ -14,12 +14,16 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
-    private String apellidos;
+    private String apellido;
     private String direccion;
 
-    public Cliente(String nombre, String apellidos, String direccion) {
+    public Cliente(String nombre, String apellido, String direccion) {
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido = apellido;
         this.direccion = direccion;
     }
+
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="id_cliente")
+    private  DetalleCliente detalleCliente;
 }
